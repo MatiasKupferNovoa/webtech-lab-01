@@ -1,0 +1,56 @@
+body {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+  color: #222;
+  font-family: Arial;
+  line-height: 1.5;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+}
+
+figure { margin: 20px 0; }
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+article, aside {
+  padding: 20px;
+  border: 1px solid #aaa;
+}
+
+form {
+  display: flex;
+  max-width: 600px;
+  flex-direction: column;
+  gap: 8px;
+}
+
+input, textarea, button {
+  padding: 10px;
+  font: inherit;
+}
+
+button {
+    margin-top: 10px;
+      border: 0;
+        background-color: blue;
+          color: white;
+}
+
+footer {
+  margin-top: 20px;
+}

@@ -2,15 +2,34 @@ body {
   max-width: 1000px;
   margin: auto;
   padding: 20px;
-  color: #222;
+  background-color: #ffffff;
+  color: #000000;
   font-family: Arial;
   line-height: 1.5;
+}
+
+body.dark-theme {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+p {
+  text-align: justify;
 }
 
 nav {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  margin-bottom: 20px;
+}
+
+a {
+  color: #005ea8;
+}
+
+body.dark-theme a {
+  color: #8ecbff;
 }
 
 img {
@@ -21,15 +40,31 @@ img {
 
 figure { margin: 20px 0; }
 
-.works-grid {
+.works-grid,
+.collection-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 
-article, aside {
+#collection-filter {
+  width: 290px;
+  max-width: 100%;
+  padding: 10px;
+}
+
+article, 
+aside,
+.collection-item {
   padding: 20px;
   border: 1px solid #000000;
+  margin-top: 10px;
+}
+
+body.dark-theme article,
+body.dark-theme aside,
+body.dark-theme .collection-item {
+  border-color: #c9c9c9;
 }
 
 form {
@@ -39,16 +74,32 @@ form {
   gap: 8px;
 }
 
-input, textarea, button {
+input, 
+textarea, 
+button {
   padding: 10px;
   font: inherit;
 }
 
 button {
     margin-top: 10px;
-      border: 0;
-        background-color: blue;
-          color: white;
+    border: 0;
+    background-color: #0000ff;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.error-message {
+  color: #be0303;
+  font-weight: bold;
+}
+
+.error-message:not(:empty) {
+  margin-bottom: 10px;
+}
+
+.success-message {
+  font-weight: bold;
 }
 
 footer {

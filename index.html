@@ -13,14 +13,17 @@
     <nav aria-label="Navegation">
       <a href="#about-me">About me</a>
       <a href="#works">Works</a>
+      <a href="#collection">Collection</a>
       <a href="#contact">Contact</a>
     </nav>
+    <button id="theme-toggle" type="button" aria-pressed="false">Dark mode</button>
   </header>
 
   <main>
     <section id="about-me">
       <h2>About me</h2>
-      <p>I am a student from Universidad de los Andes studying Industrial Civil Engineering. Im interested in data science. My hobbies are playing videogames and tennis.</p>
+      <p>I am a student from Universidad de los Andes studying Industrial Civil Engineering. 
+        I am interested in data science. My hobbies are playing videogames and tennis.</p>
       <figure>
         <img src="images/tennis.png" alt="2 tennis rackets with tennis balls on the field">
         <figcaption>An image of one of my hobbies.</figcaption>
@@ -44,11 +47,40 @@
           <h3>Experience</h3>
           <p>I worked in multiples companies during the time that i have been studying. Those jobs were focused around the operation management and finance area.</p>
         </article>
+        
         <article>
           <h3>Activites</h3>
           <p>I organized a game tournament with some friends, it was about a videogame and for entertaiment purpose.</p>
         </article>
       </div>
+    </section>
+
+    <section id="collection">
+      <h2>Videogames collection</h2>
+      <p>This collection contains videogames I have played. You can filter the collection or add a new game.</p>
+      <label for="collection-filter">Filter games</label>
+      <input id="collection-filter" type="search"
+             placeholder="Search by name, year or console">
+
+      <div id="collection-list" class="collection-grid" aria-live="polite"></div>
+      <p id="no-results" hidden>No games match your filter.</p>
+
+      <section aria-labelledby="add-item-heading">
+        <h3 id="add-item-heading">Add a new game</h3>
+
+        <form id="item-form" novalidate>
+          <label for="game-name">Game name</label>
+          <input id="game-name" name="game-name" type="text">
+
+          <label for="game-year">Release year</label>
+          <input id="game-year" name="game-year" type="number">
+
+          <label for="game-console">Console</label>
+          <input id="game-console" name="game-console" type="text">
+
+          <button type="submit">Add game</button>
+        </form>
+      </section>
     </section>
 
     <section id="contact">
@@ -59,20 +91,33 @@
       </p>
       <p>This is my <a href="https://www.linkedin.com/in/mat%C3%ADas-k%C3%BCpfer-novoa-643061333/">LinkedIn profile</a>.
       </p>
-      <form action="#" method="post">
+       <form id="contact-form" novalidate>
         <label for="name">Name</label>
-        <input id="name" name="name" type="text" autocomplete="name" required>
-        <label for="email">Email address</label>
-        <input id="email" name="email" type="email" autocomplete="email" required>
-        <label for="messaje">Message</label>
-        <input id="messaje" name="messaje" rows="5" required></input>
-        <button type="submit">Submit</button>
+        <input id="name" name="name" type="text" autocomplete="name"
+               aria-describedby="name-error">
+        <span id="name-error" class="error-message" aria-live="polite"></span>
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email"
+               aria-describedby="email-error">
+        <span id="email-error" class="error-message" aria-live="polite"></span>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5"
+                  aria-describedby="message-error"></textarea>
+        <span id="message-error" class="error-message" aria-live="polite"></span>
+
+        <button type="submit">Send</button>
       </form>
+
+      <p id="contact-success" class="success-message" aria-live="polite"></p>
     </section>
   </main>
 
   <footer>
     <address>Created by Matias Kupfer at <time datetime="2026-08">August 2026</time>.</address>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
